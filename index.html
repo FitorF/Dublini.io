@@ -3,90 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <title>Dublini Food & More – Menu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
-  <style>
-    /* Stilim bazik */
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    .header img {
-      max-width: 150px;
-      display: block;
-      margin: 0 auto 20px auto;
-    }
-    .nav-buttons {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .nav-buttons button {
-      margin: 0 5px;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      border: none;
-      background-color: #0066cc;
-      color: white;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
-    .nav-buttons button:hover {
-      background-color: #004999;
-    }
-    .menu-section {
-      display: none;
-    }
-    .menu-section.active {
-      display: block;
-    }
-    ul.subitems {
-      list-style: none;
-      padding: 0;
-    }
-    ul.subitems li {
-      display: flex;
-      justify-content: space-between;
-      padding: 5px 0;
-      border-bottom: 1px solid #ddd;
-    }
-    .item {
-      margin-bottom: 20px;
-    }
-    .item img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
-    .item-title {
-      font-weight: bold;
-      font-size: 18px;
-      margin: 10px 0 5px 0;
-    }
-    .price {
-      font-weight: bold;
-    }
-    .footer {
-      margin-top: 40px;
-      font-size: 14px;
-      color: #666;
-      text-align: center;
-    }
-    /* Klasa për fshehje */
-    .hidden {
-      display: none;
-    }
-
-    /* QR Code style */
-    #qrcode {
-      margin: 40px auto 20px auto;
-      width: 220px;
-      height: 220px;
-    }
-  </style>
-
-  <!-- Biblioteka për QR Code -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
@@ -162,12 +80,10 @@
 
   <script>
     function showSection(id) {
-      // Fshi të gjitha seksionet
       document.querySelectorAll('.menu-section').forEach(section => {
         section.classList.add('hidden');
         section.classList.remove('active');
       });
-      // Shfaq vetëm seksionin e kërkuar
       const selected = document.getElementById(id);
       if (selected) {
         selected.classList.remove('hidden');
@@ -175,17 +91,16 @@
       }
     }
 
-    // Kur ngarkon faqen, shfaq seksionin 'kafe' si default
     document.addEventListener('DOMContentLoaded', () => {
       showSection('kafe');
-
-      // Gjenero QR code me URL-në aktuale
       new QRCode(document.getElementById("qrcode"), {
         text: window.location.href,
-        width: 200,
-        height: 200,
+        width: 180,
+        height: 180,
       });
     });
   </script>
+
 </body>
 </html>
+
