@@ -2,101 +2,181 @@
 <html lang="sq">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dublini Food & More – Menu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
 
+  <!-- Logo -->
   <div class="header">
     <img src="unnamed.jpg" alt="Dublini Logo" />
   </div>
 
+  <!-- Navigimi -->
   <div class="nav-buttons">
     <button onclick="showSection('kafe')">☕ Kafe</button>
     <button onclick="showSection('pije')">🥤 Pije</button>
-    <button onclick="showSection('ushqime')">🍔 Ushqime</button>
+    <button onclick="showSection('ushqime')">🍕 Ushqime</button>
   </div>
 
-  <!-- Kafe -->
+  <!-- Seksioni i kafes -->
   <div id="kafe" class="menu-section">
     <h2>Kafe</h2>
     <ul class="subitems">
-      <li><span>Expreso</span><span class='price'>€0.80</span></li>
-      <li><span>Makiato e vogël</span><span class='price'>€0.80</span></li>
-      <li><span>Makiato e madhe</span><span class='price'>€1.00</span></li>
-      <li><span>Makiato Paplum</span><span class='price'>€1.00</span></li>
-      <li><span>Ness Cafe</span><span class='price'>€1.00</span></li>
-      <li><span>Vanila Cafe</span><span class='price'>€1.00</span></li>
-      <li><span>Qaj Rusi</span><span class='price'>€0.70</span></li>
-      <li><span>Qaj Brusnica</span><span class='price'>€0.70</span></li>
-      <li><span>Qaj Menta</span><span class='price'>€0.70</span></li>
-      <li><span>Qaj Fruta Mali</span><span class='price'>€0.70</span></li>
-      <li><span>Qaj Kamilica</span><span class='price'>€0.70</span></li>
-      <li><span>Qaj Kamomil</span><span class='price'>€0.70</span></li>
+      <li><span>Espresso</span><span class="price">€0.80</span></li>
+      <li><span>Makiato</span><span class="price">€0.80</span></li>
+      <li><span>Euro Paplum</span><span class="price">€0.80</span></li>
+      <li><span>Latte Makiato</span><span class="price">€1.00</span></li>
+      <li><span>Bambi</span><span class="price">€1.00</span></li>
     </ul>
   </div>
 
-  <!-- Pije -->
+  <!-- Seksioni i pijeve -->
   <div id="pije" class="menu-section hidden">
     <h2>Pije</h2>
     <ul class="subitems">
-      <li><span>Red Bull</span><span class='price'>€2.00</span></li>
-      <li><span>Coca Cola</span><span class='price'>€1.00</span></li>
-      <li><span>Coca Cola 0</span><span class='price'>€1.00</span></li>
-      <li><span>Fanta Orange</span><span class='price'>€1.00</span></li>
-      <li><span>Fanta Exotik</span><span class='price'>€1.00</span></li>
-      <li><span>Shveps</span><span class='price'>€1.00</span></li>
-      <li><span>Biter Limon</span><span class='price'>€1.00</span></li>
-      <li><span>Sprite</span><span class='price'>€1.00</span></li>
-      <li><span>Limon Soda</span><span class='price'>€1.00</span></li>
-      <li><span>Sola Multivitamin</span><span class='price'>€1.00</span></li>
-      <li><span>Sola Ice Tea</span><span class='price'>€1.00</span></li>
-      <li><span>Laqin Limon</span><span class='price'>€1.00</span></li>
-      <li><span>Laqin Mandarin</span><span class='price'>€1.00</span></li>
-      <li><span>Laqin Tropikal</span><span class='price'>€1.00</span></li>
-      <li><span>Laqin Dud</span><span class='price'>€1.00</span></li>
-      <li><span>Gold Eagle</span><span class='price'>€1.00</span></li>
-      <li><span>Ice Tea Natyral</span><span class='price'>€1.00</span></li>
-      <li><span>Multivitamin</span><span class='price'>€1.00</span></li>
-      <li><span>Borovnicë</span><span class='price'>€1.00</span></li>
-      <li><span>Qershi</span><span class='price'>€1.00</span></li>
-      <li><span>Mollë</span><span class='price'>€1.00</span></li>
-      <li><span>Pjeshkë</span><span class='price'>€1.00</span></li>
-      <li><span>Portokall</span><span class='price'>€1.00</span></li>
-      <li><span>Dredhëz</span><span class='price'>€1.00</span></li>
-      <li><span>Lang për Fëmijë</span><span class='price'>€0.50</span></li>
+      <li><span>Coca Cola</span><span class="price">€1.00</span></li>
+      <li><span>Fanta</span><span class="price">€1.00</span></li>
+      <li><span>Cola Grop</span><span class="price">€1.00</span></li>
+      <li><span>Ice Tea</span><span class="price">€1.00</span></li>
+      <li><span>Laqin</span><span class="price">€1.00</span></li>
+      <li><span>Pjeshkë</span><span class="price">€1.00</span></li>
+      <li><span>Dredhëz</span><span class="price">€1.00</span></li>
     </ul>
   </div>
 
-    <!-- Seksioni i ushqimeve -->
-  <div id="ushqime" class="menu-section hidden">
-    <!-- Pizza -->
+  <!-- Seksioni i ushqimeve -->
+<!-- Ushqime (me dizajn të përmirësuar në card view) -->
+<div id="ushqime" class="menu-section hidden">
+  <h2>Ushqime</h2>
+  <div class="food-grid">
+    <!-- Grupi i Picave në një kartë të vetme -->
     <div class="item">
-      <img src="Pizza.jpg" alt="Pizza" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Supreme_pizza.jpg" alt="Pizza" />
       <div class="item-title">Pizza</div>
       <ul class="subitems">
-        <li><span>Pizza e Vogël</span><span class="price">€3.00</span></li>
-        <li><span>Pizza e Mesme</span><span class="price">€3.50</span></li>
-        <li><span>Pizza e Madhe</span><span class="price">€4.00</span></li>
+        <li><span>Pizza e Vogël</span><span class="price">€2.50</span></li>
+        <li><span>Pizza Mesme</span><span class="price">€3.00</span></li>
+        <li><span>Pizza e Madhe</span><span class="price">€3.50</span></li>
+        <li><span>Pizza Margarita</span><span class="price">€2.50 - €3.00</span></li>
+        <li><span>Pizza Proshutë</span><span class="price">€3.00 - €3.50</span></li>
+        <li><span>Pizza Shtëpie</span><span class="price">€3.50 - €4.00</span></li>
+        <li><span>Pizza Dublini</span><span class="price">€4.00 - €4.50</span></li>
       </ul>
     </div>
+
+    <!-- Grupi i Dynerëve -->
+    <div class="item">
+      <img src="doner.webp" alt="Dyner" />
+      <div class="item-title">Dyner</div>
+      <ul class="subitems">
+        <li><span>Dyner Pule Petë</span><span class="price">€2.00 / €3.50</span></li>
+        <li><span>Dyner Pule Pitak</span><span class="price">€2.00 / €3.50</span></li>
+        <li><span>Dyner Pule Pijatë</span><span class="price">€3.50</span></li>
+        <li><span>Dyner Viçi Petë</span><span class="price">€2.00 / €3.50</span></li>
+        <li><span>Dyner Viçi Pitak</span><span class="price">€2.00 / €3.50</span></li>
+        <li><span>Dyner Viçi Pijatë</span><span class="price">€3.50</span></li>
+      </ul>
+    </div>
+
+    
+
+    <!-- Grupi i Grillit -->
+    <div class="item">
+      <img src="pexels-snapwire-675951.jpg" alt="Grill" />
+      <div class="item-title">Grill</div>
+      <ul class="subitems">
+        <li><span>Pleskavic</span><span class="price">€3.00</span></li>
+        <li><span>Pleskavic Sharri</span><span class="price">€4.00</span></li>
+        <li><span>Qebapa Qofte 1/5</span><span class="price">€3.00</span></li>
+        <li><span>Qebapa Qofte 1/7</span><span class="price">€4.00</span></li>
+        <li><span>File Pule</span><span class="price">€3.00</span></li>
+        <li><span>File Dublin</span><span class="price">€3.00</span></li>
+        <li><span>Suxhuk Vrishlle 1/10</span><span class="price">€5.00</span></li>
+        <li><span>Kajma</span><span class="price">€3.00</span></li>
+      </ul>
+    </div>
+
+
+        <!-- Grupi i hamburgerit -->
+    <div class="item">
+      <img src="hamburger.webp" alt="Grill" />
+      <div class="item-title">Burger</div>
+      <ul class="subitems">
+        <li><span>Hamburger Classik</span><span class="price">€2.00</span></li>
+        <li><span>Chese bruger</span><span class="price">€2.00</span></li>
+        <li><span>Eagess burger</span><span class="price">€2.00</span></li>
+      </ul>
+    </div>
+
+            <!-- Grupi i Tostave -->
+    <div class="item">
+      <img src="tost.webp" alt="Grill" />
+      <div class="item-title">Tostave</div>
+      <ul class="subitems">
+        <li><span>Tost</span><span class="price">€1.20</span></li>
+        <li><span>Sandwich</span><span class="price">€1.20</span></li>
+      </ul>
+    </div>
+
+    <!-- Grupi i Tradicionalëve -->
+    <div class="item">
+      <img src="albanian-cuisine-more-than-640x427.webp" alt="Tradicionale" />
+      <div class="item-title">Ushqime Tradicionale</div>
+      <ul class="subitems">
+        <li><span>Paqë</span><span class="price">€2.00</span></li>
+        <li><span>Gullash</span><span class="price">€3.00</span></li>
+        <li><span>Pasul me Mish</span><span class="price">€3.00</span></li>
+        <li><span>Kofshë Pule</span><span class="price">€3.00</span></li>
+        <li><span>Gjuveq Pule</span><span class="price">€3.00</span></li>
+        <li><span>Dolma</span><span class="price">€3.00</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<style>
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+.subitems {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+.subitems li {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 1rem;
+}
+</style>
+
+
+
+
+  <!-- QR Code për URL-në e faqes -->
+ 
 
   <div class="footer">
     © 2025 – DUBLINI FOOD & MORE. Ju mirëpresim çdo ditë!
   </div>
 
-  <div id="qrcode" style="display: none;"></div>
-
   <script>
     function showSection(id) {
       document.querySelectorAll('.menu-section').forEach(section => {
         section.classList.add('hidden');
+        section.classList.remove('active');
       });
       const selected = document.getElementById(id);
       if (selected) {
         selected.classList.remove('hidden');
+        selected.classList.add('active');
       }
     }
 
@@ -105,7 +185,7 @@
       new QRCode(document.getElementById("qrcode"), {
         text: window.location.href,
         width: 180,
-        height: 180
+        height: 180,
       });
     });
   </script>
