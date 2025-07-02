@@ -4,16 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dublini Food & More – Menu</title>
-  <link rel="stylesheet" href="style.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body>
 
-  <div class="header">
-    <img src="unnamed.jpg" alt="Dublini Logo" />
+  <div class="header" style="text-align:center; margin:20px 0;">
+    <img src="unnamed.jpg" alt="Dublini Logo" style="max-width:200px;" />
   </div>
 
-  <div class="nav-buttons">
+  <div class="nav-buttons" style="text-align:center; margin-bottom:20px;">
     <button onclick="showSection('kafe')">☕ Kafe</button>
     <button onclick="showSection('pije')">🥤 Pije</button>
     <button onclick="showSection('ushqime')">🍔 Ushqime</button>
@@ -22,76 +21,104 @@
   <!-- Kafe -->
   <div id="kafe" class="menu-section">
     <h2>Kafe</h2>
-    <ul class="subitems">
-      <li><span>Expreso</span><span class='price'>€0.80</span></li>
-      <li><span>Makiato e vogël</span><span class='price'>€0.80</span></li>
-      <li><span>Makiato e madhe</span><span class='price'>€1.00</span></li>
-      <li><span>Makiato Paplum</span><span class='price'>€1.00</span></li>
-      <li><span>Ness Cafe</span><span class='price'>€1.00</span></li>
-      <li><span>Vanila Cafe</span><span class='price'>€1.00</span></li>
-      <li><span>Qaj Rusi</span><span class='price'>€0.70</span></li>
-      <li><span>Qaj Brusnica</span><span class='price'>€0.70</span></li>
-      <li><span>Qaj Menta</span><span class='price'>€0.70</span></li>
-      <li><span>Qaj Fruta Mali</span><span class='price'>€0.70</span></li>
-      <li><span>Qaj Kamilica</span><span class='price'>€0.70</span></li>
-      <li><span>Qaj Kamomil</span><span class='price'>€0.70</span></li>
+    <ul>
+      <li>Expreso <span>€0.80</span></li>
+      <li>Makiato e vogël <span>€0.80</span></li>
+      <li>Makiato e madhe <span>€1.00</span></li>
+      <li>Makiato Paplum <span>€1.00</span></li>
+      <li>Ness Cafe <span>€1.00</span></li>
+      <li>Vanila Cafe <span>€1.00</span></li>
+      <li>Qaj Rusi <span>€0.70</span></li>
+      <li>Qaj Brusnica <span>€0.70</span></li>
+      <li>Qaj Menta <span>€0.70</span></li>
+      <li>Qaj Fruta Mali <span>€0.70</span></li>
+      <li>Qaj Kamilica <span>€0.70</span></li>
+      <li>Qaj Kamomil <span>€0.70</span></li>
     </ul>
   </div>
 
   <!-- Pije -->
-  <div id="pije" class="menu-section hidden">
+  <div id="pije" class="menu-section" style="display:none;">
     <h2>Pije</h2>
-    <ul class="subitems">
-      <li><span>Red Bull</span><span class='price'>€2.00</span></li>
-      <li><span>Coca Cola</span><span class='price'>€1.00</span></li>
-      <li><span>Coca Cola 0</span><span class='price'>€1.00</span></li>
-      <li><span>Fanta Orange</span><span class='price'>€1.00</span></li>
-      <li><span>Fanta Exotik</span><span class='price'>€1.00</span></li>
-      <li><span>Shveps</span><span class='price'>€1.00</span></li>
-      <li><span>Biter Limon</span><span class='price'>€1.00</span></li>
-      <li><span>Sprite</span><span class='price'>€1.00</span></li>
-      <li><span>Limon Soda</span><span class='price'>€1.00</span></li>
-      <li><span>Sola Multivitamin</span><span class='price'>€1.00</span></li>
-      <li><span>Sola Ice Tea</span><span class='price'>€1.00</span></li>
-      <li><span>Laqin Limon</span><span class='price'>€1.00</span></li>
-      <li><span>Laqin Mandarin</span><span class='price'>€1.00</span></li>
-      <li><span>Laqin Tropikal</span><span class='price'>€1.00</span></li>
-      <li><span>Laqin Dud</span><span class='price'>€1.00</span></li>
-      <li><span>Gold Eagle</span><span class='price'>€1.00</span></li>
-      <li><span>Ice Tea Natyral</span><span class='price'>€1.00</span></li>
-      <li><span>Multivitamin</span><span class='price'>€1.00</span></li>
-      <li><span>Borovnicë</span><span class='price'>€1.00</span></li>
-      <li><span>Qershi</span><span class='price'>€1.00</span></li>
-      <li><span>Mollë</span><span class='price'>€1.00</span></li>
-      <li><span>Pjeshkë</span><span class='price'>€1.00</span></li>
-      <li><span>Portokall</span><span class='price'>€1.00</span></li>
-      <li><span>Dredhëz</span><span class='price'>€1.00</span></li>
-      <li><span>Lang për Fëmijë</span><span class='price'>€0.50</span></li>
+    <ul>
+      <li>Red Bull <span>€2.00</span></li>
+      <li>Coca Cola <span>€1.00</span></li>
+      <li>Coca Cola 0 <span>€1.00</span></li>
+      <li>Fanta Orange <span>€1.00</span></li>
+      <li>Fanta Exotik <span>€1.00</span></li>
+      <li>Shveps <span>€1.00</span></li>
+      <li>Biter Limon <span>€1.00</span></li>
+      <li>Sprite <span>€1.00</span></li>
+      <li>Limon Soda <span>€1.00</span></li>
+      <li>Sola Multivitamin <span>€1.00</span></li>
+      <li>Sola Ice Tea <span>€1.00</span></li>
+      <li>Laqin Limon <span>€1.00</span></li>
+      <li>Laqin Mandarin <span>€1.00</span></li>
+      <li>Laqin Tropikal <span>€1.00</span></li>
+      <li>Laqin Dud <span>€1.00</span></li>
+      <li>Gold Eagle <span>€1.00</span></li>
+      <li>Ice Tea Natyral <span>€1.00</span></li>
+      <li>Multivitamin <span>€1.00</span></li>
+      <li>Borovnicë <span>€1.00</span></li>
+      <li>Qershi <span>€1.00</span></li>
+      <li>Mollë <span>€1.00</span></li>
+      <li>Pjeshkë <span>€1.00</span></li>
+      <li>Portokall <span>€1.00</span></li>
+      <li>Dredhëz <span>€1.00</span></li>
+      <li>Lang për Fëmijë <span>€0.50</span></li>
     </ul>
   </div>
 
   <!-- Ushqime -->
-  <div id="ushqime" class="menu-section hidden">
+  <div id="ushqime" class="menu-section" style="display:none;">
     <h2>Ushqime</h2>
-    <!-- Ushqimet me foto do vendosen këtu -->
-    <!-- Psh: hamburger, tost, dyner, pizza, etj. janë të shtuara në versionin që po ta jap si file -->
+    <ul>
+      <li>Margarita - €2.50 / €3.00</li>
+      <li>Fugi - €3.00 / €3.50</li>
+      <li>Përshuto - €3.00 / €3.50</li>
+      <li>Shtëpie - €3.50 / €4.00</li>
+      <li>Dublin - €4.00 / €4.50</li>
+      <li>Defciang - €4.50</li>
+
+      <li>Dyner Pule Petë - €2.00 / €3.50</li>
+      <li>Dyner Pule Pitajk - €2.00 / €3.50</li>
+      <li>Dyner Pule Pijatë - €3.50</li>
+      <li>Dyner Viçi Petë - €2.00 / €3.50</li>
+      <li>Dyner Viçi Pitajk - €2.00 / €3.50</li>
+      <li>Dyner Viçi Pijatë - €3.50</li>
+
+      <li>Deliciong</li>
+      <li>TRASICOONAL</li>
+      <li>Paqë - €2.00</li>
+      <li>Gullash - €3.00</li>
+      <li>Pasul me Mish - €3.00</li>
+      <li>Kofshë Pule - €3.00</li>
+      <li>Gjuveq Pule - €3.00</li>
+      <li>Dolma - €3.00</li>
+
+      <li>Pleskavic - €3.00</li>
+      <li>Pleskavic Sharri - €4.00</li>
+      <li>Qebapa Qofte 1/5 - €3.00</li>
+      <li>Qebapa Qofte 1/7 - €4.00</li>
+      <li>File Pule - €3.00</li>
+      <li>File Dublin - €3.00</li>
+      <li>Suxhuk Vrishlle 1/10 - €5.00</li>
+      <li>Kajma - €3.00</li>
+    </ul>
   </div>
 
-  <div class="footer">
+  <div class="footer" style="text-align:center; margin:40px 0 20px 0; font-size:14px; color:#888;">
     © 2025 – DUBLINI FOOD & MORE. Ju mirëpresim çdo ditë!
   </div>
 
-  <div id="qrcode" style="display: none;"></div>
+  <div id="qrcode" style="display:none;"></div>
 
   <script>
     function showSection(id) {
-      document.querySelectorAll('.menu-section').forEach(section => {
-        section.classList.add('hidden');
+      ['kafe', 'pije', 'ushqime'].forEach(sectionId => {
+        document.getElementById(sectionId).style.display = 'none';
       });
-      const selected = document.getElementById(id);
-      if (selected) {
-        selected.classList.remove('hidden');
-      }
+      document.getElementById(id).style.display = 'block';
     }
 
     document.addEventListener('DOMContentLoaded', () => {
