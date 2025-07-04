@@ -1,72 +1,186 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sq">
 <head>
-    <meta charset="UTF-8">
-    <title>NN Beauty Bliss</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salloni i Bukurisë</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9e4cf; /* ngjyrë krem e ngjashme me lëkurën */
+      color: #333;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #fff3eb;
+      padding: 10px 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      position: relative;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #9c6f5c;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background-color: #9c6f5c;
+      margin: 4px 0;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #9c6f5c;
+      background-color: #ffe8d6;
+      padding: 10px 18px;
+      border-radius: 25px;
+      font-weight: 500;
+      font-size: 1em;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    nav a:hover {
+      background-color: #fddbb0;
+      transform: scale(1.05);
+    }
+
+    main {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    main h1 {
+      color: #7b4e3c;
+    }
+
+    footer {
+      margin-top: 100px;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #fff3eb;
+        padding: 15px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        animation: fadeIn 0.3s ease forwards;
+      }
+
+      nav.active {
+        display: flex;
+      }
+
+      nav a {
+        padding: 12px 16px;
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+
+
+    /* FOOTER */
+footer {
+  background-color: #222;
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+footer a img {
+  width: 30px;
+  margin: 0 12px;
+  transition: transform 0.3s ease;
+}
+
+footer a img:hover {
+  transform: scale(1.3);
+}
+
+footer p {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+  </style>
 </head>
 <body>
-
-    <!-- Header -->
-<header class="topbar">
-  <div class="container">
-    <img src="logo.png" alt="Logo" class="logo">
-    <nav class="main-nav">
-<a href="rreth-nesh.html" class="nav-btn">🏠<span>Rreth</span></a>
-<a href="qmimoret.html" class="nav-btn">💰<span>Çmimet</span></a>
-<a href="eventet.html" class="nav-btn">🎉<span>Eventet</span></a>
+  <header>
+    <div class="logo">Salloni Yt</div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="navMenu">
+      <a href="rreth-nesh.html">Rreth Nesh</a>
+      <a href="qmimet.html">Çmimet</a>
+      <a href="eventet.html">Eventet</a>
     </nav>
+  </header>
+
+  <main>
+    <h1>Mirë se vini në Sallonin tonë të Bukurisë!</h1>
+    <p>Zbulo shërbimet tona, eventet speciale dhe më shumë.</p>
+  </main>
+
+<footer style="text-align:center; padding:20px; background-color:#fff3eb; color:#9c6f5c; margin-top:100px; font-family: 'Segoe UI', sans-serif;">
+  <p>Faleminderit që na zgjodhët. NN Beauty Bliss – Bukuri me pasion dhe stil.</p>
+
+  <div style="margin: 10px 0;">
+    <a href="https://www.facebook.com/nnbeautybliss" target="_blank" style="margin: 0 10px;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Facebook-icon-1.png" alt="Facebook" width="30" height="30" style="vertical-align: middle;">
+    </a>
+    <a href="https://www.instagram.com/nnbeautybliss" target="_blank" style="margin: 0 10px;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" width="30" height="30" style="vertical-align: middle;">
+    </a>
   </div>
-</header>
 
-    <!-- Navigacioni -->
+  <p>📍 Rruga e Bukurisë, Prizren, Kosovë</p>
+</footer>
 
-
-    <!-- Seksioni: Rreth Nesh -->
-    <section id="rreth">
-        <h2>Rreth NN Beauty Bliss</h2>
-        <p>
-            NN Beauty Bliss është një sallon bukurie modern që ofron një eksperiencë të veçantë kujdesi për veten. 
-            Ne përdorim produkte cilësore dhe teknika të avancuara për t’ju ofruar relaks, bukuri dhe vetëbesim.
-        </p>
-    </section>
-
-    <!-- Seksioni: Çmimoret -->
-    <section id="qmimoret">
-        <h2>Çmimoret</h2>
-        <ul>
-            <li>💅 Manikyr klasik - 10€</li>
-            <li>💇‍♀️ Prerje flokësh - 15€</li>
-            <li>💆‍♀️ Masazh relaksues - 20€</li>
-            <li>💄 Makeup profesional - 25€</li>
-        </ul>
-    </section>
-
-    <!-- Seksioni: Eventet -->
-    <section id="eventet">
-        <h2>Eventet Speciale</h2>
-        <ul>
-            <li>📅 15 Korrik - Ditë falas për klientet e reja</li>
-            <li>📅 25 Gusht - Workshop për makeup me profesionistë</li>
-            <li>📅 5 Shtator - Risi në trajtime estetike</li>
-        </ul>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>Faleminderit që na zgjodhët. NN Beauty Bliss – Bukuri me pasion dhe stil.</p>
-
-        <div>
-            <a href="https://www.facebook.com/nnbeautybliss" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Facebook-icon-1.png" alt="Facebook">
-            </a>
-            <a href="https://www.instagram.com/nnbeautybliss" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
-            </a>
-        </div>
-
-        <p>📍 Rruga e Bukurisë, Prizren, Kosovë</p>
-    </footer>
-
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navMenu');
+      nav.classList.toggle('active');
+    }
+  </script>
 </body>
 </html>
