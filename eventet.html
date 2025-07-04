@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eventet – Salloni i Bukurisë</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9e4cf;
+      color: #333;
+    }
+
+    header {
+      background-color: #fff3eb;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .header-title {
+      font-size: 1.8em;
+      font-weight: bold;
+      color: #9c6f5c;
+      text-align: center;
+      flex-grow: 1;
+    }
+
+    .back-button {
+      background-color: #9c6f5c;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 1em;
+      margin-right: 10px;
+      transition: background-color 0.3s ease, transform 0.2s;
+    }
+
+    .back-button:hover {
+      background-color: #7b4e3c;
+      transform: scale(1.05);
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    h2 {
+      color: #7b4e3c;
+      margin-bottom: 20px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      object-fit: cover;
+      height: 250px;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: 60px;
+      background-color: #222;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    footer a img {
+      width: 30px;
+      margin: 0 10px;
+      transition: transform 0.3s ease;
+    }
+
+    footer a img:hover {
+      transform: scale(1.2);
+    }
+
+    @media (max-width: 500px) {
+      .header-title {
+        font-size: 1.4em;
+      }
+
+      .back-button {
+        padding: 8px 16px;
+        font-size: 0.9em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <button class="back-button" onclick="goBack()">← Kthehu</button>
+    <div class="header-title">Eventet & Klientët e Kënaqur</div>
+  </header>
+
+  <main>
+    <h2>Momente nga Sallonin ynë</h2>
+    <p>Shikoni disa nga punët tona dhe buzëqeshjet e klientëve tanë të dashur!</p>
+
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=600&q=80" alt="Klient i kënaqur" />
+      <img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df?auto=format&fit=crop&w=600&q=80" alt="Modelim flokësh" />
+      <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=600&q=80" alt="Grim profesional" />
+      <img src="https://images.unsplash.com/photo-1556228724-4bca9a1b3a8d?auto=format&fit=crop&w=600&q=80" alt="Thonj artistikë" />
+      <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=600&q=80" alt="Para dhe pas transformimi" />
+      <img src="https://images.unsplash.com/photo-1524253482453-3fed8d2fe12b?auto=format&fit=crop&w=600&q=80" alt="Kliente gjatë eventit" />
+    </div>
+  </main>
+
+  <footer>
+    <p>Faleminderit që na zgjodhët. NN Beauty Bliss – Bukuri me pasion dhe stil.</p>
+    <div>
+      <a href="https://www.facebook.com/nnbeautybliss" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Facebook-icon-1.png" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/nnbeautybliss" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+      </a>
+    </div>
+    <p>📍 Rruga e Bukurisë, Prizren, Kosovë</p>
+  </footer>
+
+  <script>
+    function goBack() {
+      window.location.href = "index.html";
+    }
+  </script>
+
+</body>
+</html>
