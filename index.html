@@ -1,216 +1,72 @@
 <!DOCTYPE html>
-<html lang="sq">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Dublini Food & More – Menu</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <meta charset="UTF-8">
+    <title>NN Beauty Bliss</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Logo -->
-  <div class="header">
-    <img src="unnamed.jpg" alt="Dublini Logo" />
+    <!-- Header -->
+<header class="topbar">
+  <div class="container">
+    <img src="logo.png" alt="Logo" class="logo">
+    <nav class="main-nav">
+<a href="rreth-nesh.html" class="nav-btn">🏠<span>Rreth</span></a>
+<a href="qmimoret.html" class="nav-btn">💰<span>Çmimet</span></a>
+<a href="eventet.html" class="nav-btn">🎉<span>Eventet</span></a>
+    </nav>
   </div>
+</header>
 
-  <!-- Navigimi -->
-  <div class="nav-buttons">
-    <button onclick="showSection('kafe')">☕ Kafe</button>
-    <button onclick="showSection('pije')">🥤 Pije</button>
-    <button onclick="showSection('ushqime')">🍕 Ushqime</button>
-  </div>
-
-  <!-- Seksioni i kafes -->
-  <div id="kafe" class="menu-section">
-    <h2>Kafe</h2>
-    <ul class="subitems">
-  <li><span>Expreso</span><span class="price">€0.80</span></li>
-  <li><span>Makiato e vogël</span><span class="price">€0.80</span></li>
-  <li><span>Makiato e madhe</span><span class="price">€1.00</span></li>
-  <li><span>Ness Cafe</span><span class="price">€1</span></li>
-  <li><span>Vanila Cafe</span><span class="price">€1</span></li>
-  <li><span>Qaj Rusi</span><span class="price">€0.70</span></li>
-  <li><span>Qaj Brusnica</span><span class="price">€0.70</span></li>
-  <li><span>Qaj Menta</span><span class="price">€0.70</span></li>
-  <li><span>Qaj Fruta Mali</span><span class="price">€0.70</span></li>
-  <li><span>Qaj Kamilica</span><span class="price">€0.70</span></li>
-  <li><span>Qaj Kamomil</span><span class="price">€0.70</span></li>
-    </ul>
-  </div>
-
-  <!-- Seksioni i pijeve -->
-  <div id="pije" class="menu-section hidden">
-    <h2>Pije</h2>
-    <ul class="subitems">
-  <li><span>Red Bull</span><span class="price">€2.00</span></li>
-  <li><span>Coca Cola</span><span class="price">€1.00</span></li>
-  <li><span>Coca Cola 0</span><span class="price">€1.00</span></li>
-  <li><span>Fanta Orange</span><span class="price">€1.00</span></li>
-  <li><span>Fanta Exotik</span><span class="price">€1.00</span></li>
-  <li><span>Shveps</span><span class="price">€1.00</span></li>
-  <li><span>Biter Limon</span><span class="price">€1.00</span></li>
-  <li><span>Sprite</span><span class="price">€1.00</span></li>
-  <li><span>Limon Soda</span><span class="price">€1.00</span></li>
-  <li><span>Sola Multivitamin</span><span class="price">€1.00</span></li>
-  <li><span>Sola Ice Tea</span><span class="price">€1.00</span></li>
-  <li><span>Laqin Limon</span><span class="price">€1.00</span></li>
-  <li><span>Laqin Mandarin</span><span class="price">€1.00</span></li>
-  <li><span>Laqin Tropikal</span><span class="price">€1.00</span></li>
-  <li><span>Laqin Dud</span><span class="price">€1.00</span></li>
-  <li><span>Gold Eagle</span><span class="price">€1.00</span></li>
-  <li><span>Ice Tea Natyral</span><span class="price">€1.00</span></li>
-  <li><span>Multivitamin</span><span class="price">€1.00</span></li>
-  <li><span>Borovnicë</span><span class="price">€1.00</span></li>
-  <li><span>Qershi</span><span class="price">€1.00</span></li>
-  <li><span>Mollë</span><span class="price">€1.00</span></li>
-  <li><span>Pjeshkë</span><span class="price">€1.00</span></li>
-  <li><span>Portokall</span><span class="price">€1.00</span></li>
-  <li><span>Dredhëz</span><span class="price">€1.00</span></li>
-  <li><span>Lang për Fëmijë</span><span class="price">€0.50</span></li>
-    </ul>
-  </div>
-
-  <!-- Seksioni i ushqimeve -->
-<!-- Ushqime (me dizajn të përmirësuar në card view) -->
-<div id="ushqime" class="menu-section hidden">
-  <h2>Ushqime</h2>
-  <div class="food-grid">
-    <!-- Grupi i Picave në një kartë të vetme -->
-    <div class="item">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Supreme_pizza.jpg" alt="Pizza" />
-      <div class="item-title">Pizza</div>
-      <ul class="subitems">
-        <li><span>Pizza e Vogël</span><span class="price">€3.00</span></li>
-        <li><span>Pizza Mesme</span><span class="price">€3.50</span></li>
-        <li><span>Pizza Margarita</span><span class="price">€2.50 - €3.00</span></li>
-        <li><span>Pizza Proshutë</span><span class="price">€3.00 - €3.50</span></li>
-        <li><span>Pizza Shtëpie</span><span class="price">€3.50 - €4.00</span></li>
-      </ul>
-    </div>
-
-    <!-- Grupi i Dynerëve -->
-    <div class="item">
-      <img src="doner.webp" alt="Dyner" />
-      <div class="item-title">Dyner</div>
-      <ul class="subitems">
-        <li><span>Dyner Pule Petë</span><span class="price">€2.00 / €3.50</span></li>
-        <li><span>Dyner Pule Pitak</span><span class="price">€2.00 / €3.50</span></li>
-        <li><span>Dyner Pule Pijatë</span><span class="price">€3.50</span></li>
-        <li><span>Dyner Viçi Petë</span><span class="price">€2.00 / €3.50</span></li>
-        <li><span>Dyner Viçi Pitak</span><span class="price">€2.00 / €3.50</span></li>
-        <li><span>Dyner Viçi Pijatë</span><span class="price">€3.50</span></li>
-      </ul>
-    </div>
-
-    
-
-    <!-- Grupi i Grillit -->
-    <div class="item">
-      <img src="pexels-snapwire-675951.jpg" alt="Grill" />
-      <div class="item-title">Grill</div>
-      <ul class="subitems">
-        <li><span>Pleskavic</span><span class="price">€3.00</span></li>
-        <li><span>Pleskavic Sharri</span><span class="price">€4.00</span></li>
-        <li><span>Qebapa Qofte 1/5</span><span class="price">€3.00</span></li>
-        <li><span>Qebapa Qofte 1/7</span><span class="price">€4.00</span></li>
-        <li><span>File Pule</span><span class="price">€3.00</span></li>
-        <li><span>File Dublin</span><span class="price">€3.00</span></li>
-        <li><span>Suxhuk Vrishlle 1/10</span><span class="price">€5.00</span></li>
-        <li><span>Kajma</span><span class="price">€3.00</span></li>
-      </ul>
-    </div>
+    <!-- Navigacioni -->
 
 
-        <!-- Grupi i hamburgerit -->
-    <div class="item">
-      <img src="hamburger.webp" alt="Grill" />
-      <div class="item-title">Burger</div>
-      <ul class="subitems">
-        <li><span>Hamburger Classik</span><span class="price">€2.00</span></li>
-        <li><span>Chese bruger</span><span class="price">€2.00</span></li>
-        <li><span>Eagess burger</span><span class="price">€2.00</span></li>
-      </ul>
-    </div>
+    <!-- Seksioni: Rreth Nesh -->
+    <section id="rreth">
+        <h2>Rreth NN Beauty Bliss</h2>
+        <p>
+            NN Beauty Bliss është një sallon bukurie modern që ofron një eksperiencë të veçantë kujdesi për veten. 
+            Ne përdorim produkte cilësore dhe teknika të avancuara për t’ju ofruar relaks, bukuri dhe vetëbesim.
+        </p>
+    </section>
 
-            <!-- Grupi i Tostave -->
-    <div class="item">
-      <img src="tost.webp" alt="Grill" />
-      <div class="item-title">Tostave</div>
-      <ul class="subitems">
-        <li><span>Tost</span><span class="price">€1.20</span></li>
-        <li><span>Sandwich</span><span class="price">€1.20</span></li>
-      </ul>
-    </div>
+    <!-- Seksioni: Çmimoret -->
+    <section id="qmimoret">
+        <h2>Çmimoret</h2>
+        <ul>
+            <li>💅 Manikyr klasik - 10€</li>
+            <li>💇‍♀️ Prerje flokësh - 15€</li>
+            <li>💆‍♀️ Masazh relaksues - 20€</li>
+            <li>💄 Makeup profesional - 25€</li>
+        </ul>
+    </section>
 
-    <!-- Grupi i Tradicionalëve -->
-    <div class="item">
-      <img src="albanian-cuisine-more-than-640x427.webp" alt="Tradicionale" />
-      <div class="item-title">Ushqime Tradicionale</div>
-      <ul class="subitems">
-        <li><span>Paqë</span><span class="price">€2.00</span></li>
-        <li><span>Gullash</span><span class="price">€3.00</span></li>
-        <li><span>Pasul me Mish</span><span class="price">€3.00</span></li>
-        <li><span>Kofshë Pule</span><span class="price">€3.00</span></li>
-        <li><span>Gjuveq Pule</span><span class="price">€3.00</span></li>
-        <li><span>Dolma</span><span class="price">€3.00</span></li>
-      </ul>
-    </div>
-  </div>
-</div>
+    <!-- Seksioni: Eventet -->
+    <section id="eventet">
+        <h2>Eventet Speciale</h2>
+        <ul>
+            <li>📅 15 Korrik - Ditë falas për klientet e reja</li>
+            <li>📅 25 Gusht - Workshop për makeup me profesionistë</li>
+            <li>📅 5 Shtator - Risi në trajtime estetike</li>
+        </ul>
+    </section>
 
-<style>
-.food-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-}
-.subitems {
-  list-style-type: none;
-  padding-left: 0;
-  margin-top: 10px;
-}
-.subitems li {
-  display: flex;
-  justify-content: space-between;
-  padding: 6px 0;
-  border-bottom: 1px solid #eee;
-  font-size: 1rem;
-}
-</style>
+    <!-- Footer -->
+    <footer>
+        <p>Faleminderit që na zgjodhët. NN Beauty Bliss – Bukuri me pasion dhe stil.</p>
 
+        <div>
+            <a href="https://www.facebook.com/nnbeautybliss" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Facebook-icon-1.png" alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com/nnbeautybliss" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+            </a>
+        </div>
 
-
-
-  <!-- QR Code për URL-në e faqes -->
- 
-
-  <div class="footer">
-    © 2025 – DUBLINI FOOD & MORE. Ju mirëpresim çdo ditë!
-  </div>
-
-  <script>
-    function showSection(id) {
-      document.querySelectorAll('.menu-section').forEach(section => {
-        section.classList.add('hidden');
-        section.classList.remove('active');
-      });
-      const selected = document.getElementById(id);
-      if (selected) {
-        selected.classList.remove('hidden');
-        selected.classList.add('active');
-      }
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      showSection('kafe');
-      new QRCode(document.getElementById("qrcode"), {
-        text: window.location.href,
-        width: 180,
-        height: 180,
-      });
-    });
-  </script>
+        <p>📍 Rruga e Bukurisë, Prizren, Kosovë</p>
+    </footer>
 
 </body>
 </html>
