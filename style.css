@@ -98,37 +98,42 @@ body {
 }
 
 .footer {
-  background-color: #2e2e2e;
-  color: #f0f0f0;
+  background-color: #363535; /* gri shumë e errët, jo e zezë plote */
+  color: #d4d4d4; /* ngjyrë më e butë për tekstin */
   text-align: center;
-  padding: 30px 20px;
+  padding: 40px 20px;
   font-family: 'Segoe UI', sans-serif;
-  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.4);
-  border-top: 4px solid #e0b000;
+  box-shadow: 0 -6px 15px rgba(138, 131, 131, 0.3); /* hije shumë e butë */
+  border-top: 5px solid #bfa14a; /* ari më i butë, ngjyrë më delikate */
+  backdrop-filter: blur(6px); /* blur i butë prapa */
+  position: relative;
+  z-index: 10;
 }
 
 .footer p {
-  margin: 8px 0;
-  font-size: 1.1rem;
+  margin: 12px 0;
+  font-size: 1.15rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* hije shumë e butë për tekst */
 }
 
 .btn-order {
   display: inline-block;
-  margin-top: 15px;
-  background: linear-gradient(135deg, #25d366 0%, #128c4a 100%);
-  color: white;
-  padding: 14px 28px;
+  margin-top: 20px;
+  background: linear-gradient(135deg, #c8ffd0 0%, #000000 100%); /* gjelbër më e butë */
+  color: #f0f0f0;
+  padding: 16px 32px;
   border-radius: 30px;
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   text-decoration: none;
-  box-shadow: 0 6px 12px rgba(37, 211, 102, 0.6);
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 6px 12px rgba(190, 255, 198, 0.5); /* hije më e butë */
+  transition: background-color 0.3s ease, transform 0.25s ease;
 }
 
 .btn-order:hover {
-  background: linear-gradient(135deg, #128c4a 0%, #25d366 100%);
+  background: linear-gradient(135deg, #53c15c 0%, #388e3c 100%);
   transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(83, 193, 92, 0.7);
 }
 
 
