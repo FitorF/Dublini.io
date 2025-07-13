@@ -16,6 +16,34 @@ body {
   height: auto;
   max-width: 90vw; /* Për ta bërë responsive */
 }
+.whatsapp-order {
+  display: flex;
+  justify-content: center;
+  margin: 0 20px 30px 20px; /* si më parë */
+}
+
+.btn-order {
+  background: linear-gradient(135deg, #25d366 0%, #128c4a 100%);
+  color: white;
+  padding: 14px 28px;        /* si butonat e tjerë */
+  border-radius: 12px;       /* po ashtu si butonat */
+  font-weight: 700;
+  font-size: 1.1rem;         /* i njëjtë me butonat e tjerë */
+  text-decoration: none;
+  box-shadow: 0 6px 12px rgba(37, 211, 102, 0.6);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  min-width: 120px;
+  max-width: 200px;
+  text-align: center;
+}
+
+.btn-order:hover {
+  background: linear-gradient(135deg, #1ebe57 0%, #0e6c34 100%);
+  transform: scale(1.05);
+}
+
+
+
 
 .nav-buttons {
   display: flex;
@@ -137,6 +165,7 @@ body {
 }
 
 
+
 .hidden {
   display: none;
 }
@@ -186,5 +215,22 @@ body {
     width: 140px;
     height: 140px;
   }
+  @media (max-width: 480px) {
+  .btn-order {
+    padding: 10px 20px;
+    font-size: 1rem;
+    min-width: 100px;
+    max-width: 160px;
+  }
+
+  .nav-buttons button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    min-width: 100px;
+    max-width: 160px;
+  }
 }
+}
+
+
 
