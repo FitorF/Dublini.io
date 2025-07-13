@@ -1,0 +1,185 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #2e2e2e;
+  text-align: center;
+  padding: 20px;
+}
+
+.header img {
+  width: 300px;
+  height: auto;
+  max-width: 90vw; /* Për ta bërë responsive */
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.nav-buttons button {
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+  border: none;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: #5a2e00;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(253, 160, 133, 0.6);
+  transition: all 0.3s ease;
+  min-width: 120px;
+  flex: 1 1 auto;
+  max-width: 200px;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
+}
+
+.nav-buttons button:hover {
+  background: linear-gradient(135deg, #fda085 0%, #f6d365 100%);
+  box-shadow: 0 8px 20px rgba(253, 160, 133, 0.9);
+  transform: scale(1.05);
+  color: #7a3b00;
+}
+
+.menu-section {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+.item {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.item img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.item-title {
+  font-size: 1.8rem;
+  color: #333;
+  margin: 15px 0 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.subitems {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.subitems li {
+  font-size: 1.2rem;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+}
+
+.price {
+  color: #e63946;
+  font-weight: bold;
+}
+
+.footer {
+  background-color: #2e2e2e;
+  color: #f0f0f0;
+  text-align: center;
+  padding: 30px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.4);
+  border-top: 4px solid #e0b000;
+}
+
+.footer p {
+  margin: 8px 0;
+  font-size: 1.1rem;
+}
+
+.btn-order {
+  display: inline-block;
+  margin-top: 15px;
+  background: linear-gradient(135deg, #25d366 0%, #128c4a 100%);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-decoration: none;
+  box-shadow: 0 6px 12px rgba(37, 211, 102, 0.6);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-order:hover {
+  background: linear-gradient(135deg, #128c4a 0%, #25d366 100%);
+  transform: scale(1.05);
+}
+
+
+.hidden {
+  display: none;
+}
+
+#qrcode {
+  margin: 40px auto 20px auto;
+  width: 180px;
+  height: 180px;
+}
+
+/* Media Queries për celular */
+@media (max-width: 600px) {
+
+  .header img {
+    width: 90vw;
+    max-width: none;
+  }
+
+  .nav-buttons {
+    gap: 10px;
+    margin: 10px;
+  }
+
+  .nav-buttons button {
+    min-width: 80px;
+    padding: 10px 12px;
+    font-size: 0.9rem;
+    max-width: 140px;
+  }
+
+  .subitems li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    font-size: 1rem;
+  }
+
+  .price {
+    font-size: 1.1rem;
+  }
+
+  .item-title {
+    font-size: 1.4rem;
+  }
+
+  #qrcode {
+    width: 140px;
+    height: 140px;
+  }
+}
+
