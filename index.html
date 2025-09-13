@@ -1,227 +1,378 @@
+<!-- =============================
+  Spahia Petrol — One‑Page Website (index.html)
+  Notes:
+  - Replace placeholder text, prices, phone, and map link with your real details.
+  - Uses Tailwind via CDN for easy editing.
+  - Smooth-scroll navigation with tiny JS.
+  - Includes a simple Offers section, Food & Drinks menus, Photos, Hours, Location, and Contact.
+  - At the end of this file you’ll also find a second HTML document (flyer.html) for a printable QR flyer.
+============================= -->
 <!DOCTYPE html>
 <html lang="sq">
 <head>
-  <meta charset="UTF-8" />
-  <title>Dublini Food & More – Menu</title>
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <title>Spahia Petrol — Pompë, Restaurant & Kafe</title>
+  <meta name="description" content="Spahia Petrol: pompë derivatesh, restaurant & kafe në Prizren. Menu ushqimi e pije, oferta ditore, lokacion dhe kontakt." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { --brand: #0ea5e9; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'; }
+    /* Glassy header */
+    .glass { backdrop-filter: saturate(160%) blur(8px); background: rgba(255,255,255,.8); }
+    /* Simple card hover */
+    .hover-card { transition: transform .2s ease, box-shadow .2s ease; }
+    .hover-card:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,.08); }
+    /* Menu grid */
+    .menu-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 1rem; }
+    .menu-left { grid-column: span 12 / span 12; }
+    .menu-right { grid-column: span 12 / span 12; }
+    @media (min-width: 1024px){
+      .menu-left { grid-column: span 7 / span 7; }
+      .menu-right { grid-column: span 5 / span 5; }
+    }
+    /* Tag badge */
+    .badge { background: #e0f2fe; color: #0369a1; }
+  </style>
 </head>
-<body>
+<body class="text-slate-800 bg-slate-50">
+  <!-- Header -->
+  <header class="fixed top-0 inset-x-0 z-50 glass border-b border-white/60">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#hero" class="flex items-center gap-3">
+        <div class="h-9 w-9 rounded-2xl bg-sky-500 grid place-items-center text-white font-extrabold">S</div>
+        <div class="leading-tight">
+          <div class="font-extrabold tracking-tight">Spahia Petrol</div>
+          <div class="text-xs text-slate-600">Pompë • Restaurant • Kafe</div>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm font-semibold">
+        <a href="#oferta" class="hover:text-sky-600">Oferta</a>
+        <a href="#menu" class="hover:text-sky-600">Menu</a>
+        <a href="#pijet" class="hover:text-sky-600">Pije</a>
+        <a href="#orari" class="hover:text-sky-600">Orari</a>
+        <a href="#lokacioni" class="hover:text-sky-600">Lokacioni</a>
+        <a href="#kontakti" class="hover:text-sky-600">Kontakti</a>
+        <a href="#rezervo" class="px-3 py-2 rounded-xl bg-sky-500 text-white hover:bg-sky-600">Rezervo</a>
+      </nav>
+      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-xl border border-slate-300">☰</button>
+    </div>
+    <div id="mobileNav" class="md:hidden hidden border-t border-white/60">
+      <div class="px-4 py-3 grid gap-2 text-sm font-semibold">
+        <a href="#oferta" class="py-2">Oferta</a>
+        <a href="#menu" class="py-2">Menu</a>
+        <a href="#pijet" class="py-2">Pije</a>
+        <a href="#orari" class="py-2">Orari</a>
+        <a href="#lokacioni" class="py-2">Lokacioni</a>
+        <a href="#kontakti" class="py-2">Kontakti</a>
+        <a href="#rezervo" class="py-2">Rezervo</a>
+      </div>
+    </div>
+  </header>
 
-  <!-- Logo -->
-  <div class="header">
-    <img src="unnamed.jpg" alt="Dublini Logo" />
+  <!-- Hero -->
+  <section id="hero" class="pt-28 pb-12 bg-white">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <span class="badge inline-block px-3 py-1 rounded-full text-xs font-bold">E re: Menu e mëngjesit 07:00–11:00</span>
+        <h1 class="mt-3 text-4xl md:text-5xl font-extrabold tracking-tight">Mirësevini në <span class="text-sky-600">Spahia Petrol</span></h1>
+        <p class="mt-3 text-slate-600">Ndale makinën, mbush rezervuarin dhe shijo ushqim të freskët, kafe të mirë dhe ambiente të rehatshme. Jemi në hyrje të Prizrenit (Tranziti i Ri).</p>
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a href="#menu" class="px-5 py-3 rounded-xl bg-sky-500 text-white font-semibold hover:bg-sky-600">Shiko menynë</a>
+          <a href="#rezervo" class="px-5 py-3 rounded-xl border border-slate-300 font-semibold hover:border-sky-400">Rezervo tavolinë</a>
+        </div>
+        <div class="mt-6 flex items-center gap-6 text-sm text-slate-600">
+          <div class="flex items-center gap-2">⛽ Derivate cilësore</div>
+          <div class="flex items-center gap-2">🍳 Kuzhinë shtëpie</div>
+          <div class="flex items-center gap-2">☕ Kafe & ëmbëlsira</div>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="aspect-[4/3] rounded-3xl bg-cover bg-center shadow-xl hover-card" style="background-image:url('https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop');"></div>
+        <div class="absolute -bottom-4 -left-4 bg-white rounded-2xl p-4 shadow-lg border border-slate-200">
+          <div class="text-xs text-slate-500">Oferta e ditës</div>
+          <div class="font-bold">Pite shtëpie + Ayran</div>
+          <div class="text-sky-600 font-extrabold">2.50 €</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Oferta -->
+  <section id="oferta" class="py-14 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex items-end justify-between gap-4">
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Oferta</h2>
+        <span class="text-sm text-slate-500">Përditësojmë çdo javë</span>
+      </div>
+      <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="bg-white rounded-2xl p-5 border border-slate-200 hover-card">
+          <div class="text-sm text-slate-500">E hënë–e premte</div>
+          <div class="mt-1 font-bold">Mëngjes klasik</div>
+          <div class="mt-1 text-slate-600">Omletë + kafe e zezë</div>
+          <div class="mt-3 text-2xl font-extrabold text-sky-600">2.20 €</div>
+        </div>
+        <div class="bg-white rounded-2xl p-5 border border-slate-200 hover-card">
+          <div class="text-sm text-slate-500">E diel</div>
+          <div class="mt-1 font-bold">Drekë familjare</div>
+          <div class="mt-1 text-slate-600">Supë + pjatë kryesore + sallatë</div>
+          <div class="mt-3 text-2xl font-extrabold text-sky-600">4.90 €</div>
+        </div>
+        <div class="bg-white rounded-2xl p-5 border border-slate-200 hover-card">
+          <div class="text-sm text-slate-500">Çdo ditë 17:00–19:00</div>
+          <div class="mt-1 font-bold">Happy Hour</div>
+          <div class="mt-1 text-slate-600">Kafe + ëmbëlsirë</div>
+          <div class="mt-3 text-2xl font-extrabold text-sky-600">1.90 €</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu -->
+  <section id="menu" class="py-14 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Menu Ushqimi</h2>
+      <div class="mt-8 menu-grid">
+        <div class="menu-left space-y-4">
+          <!-- Kategoria 1 -->
+          <div class="bg-white rounded-2xl p-5 border border-slate-200">
+            <h3 class="text-xl font-extrabold">Mëngjes</h3>
+            <ul class="mt-3 space-y-2">
+              <li class="flex justify-between gap-4"><span>Omletë e thjeshtë</span><span class="font-semibold">1.50 €</span></li>
+              <li class="flex justify-between gap-4"><span>Omletë me djathë</span><span class="font-semibold">1.80 €</span></li>
+              <li class="flex justify-between gap-4"><span>Pite shtëpie</span><span class="font-semibold">1.40 €</span></li>
+            </ul>
+          </div>
+          <!-- Kategoria 2 -->
+          <div class="bg-white rounded-2xl p-5 border border-slate-200">
+            <h3 class="text-xl font-extrabold">Pjata Kryesore</h3>
+            <ul class="mt-3 space-y-2">
+              <li class="flex justify-between gap-4"><span>Qebap (5 copë) + bukë</span><span class="font-semibold">3.20 €</span></li>
+              <li class="flex justify-between gap-4"><span>Shnicël pule</span><span class="font-semibold">3.50 €</span></li>
+              <li class="flex justify-between gap-4"><span>Makarona bolognese</span><span class="font-semibold">2.90 €</span></li>
+              <li class="flex justify-between gap-4"><span>Rizoto me perime</span><span class="font-semibold">2.60 €</span></li>
+            </ul>
+          </div>
+          <!-- Kategoria 3 -->
+          <div class="bg-white rounded-2xl p-5 border border-slate-200">
+            <h3 class="text-xl font-extrabold">Sallata & Garnitura</h3>
+            <ul class="mt-3 space-y-2">
+              <li class="flex justify-between gap-4"><span>Sallatë e përzier</span><span class="font-semibold">1.20 €</span></li>
+              <li class="flex justify-between gap-4"><span>Turshi shtëpie</span><span class="font-semibold">0.90 €</span></li>
+              <li class="flex justify-between gap-4"><span>Patate të skuqura</span><span class="font-semibold">1.10 €</span></li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Kolona e djathtë -->
+        <div class="menu-right space-y-4" id="pijet">
+          <div class="bg-white rounded-2xl p-5 border border-slate-200">
+            <h3 class="text-xl font-extrabold">Pije të Ngrohta</h3>
+            <ul class="mt-3 space-y-2">
+              <li class="flex justify-between gap-4"><span>Kafe e zezë</span><span class="font-semibold">0.70 €</span></li>
+              <li class="flex justify-between gap-4"><span>Macchiato</span><span class="font-semibold">1.00 €</span></li>
+              <li class="flex justify-between gap-4"><span>Çaj</span><span class="font-semibold">0.60 €</span></li>
+            </ul>
+          </div>
+          <div class="bg-white rounded-2xl p-5 border border-slate-200">
+            <h3 class="text-xl font-extrabold">Pije të Ftohta</h3>
+            <ul class="mt-3 space-y-2">
+              <li class="flex justify-between gap-4"><span>Ujë 0.5L</span><span class="font-semibold">0.50 €</span></li>
+              <li class="flex justify-between gap-4"><span>Lëng portokalli</span><span class="font-semibold">1.20 €</span></li>
+              <li class="flex justify-between gap-4"><span>Cola/Fanta/Sprite</span><span class="font-semibold">1.00 €</span></li>
+              <li class="flex justify-between gap-4"><span>Ayran</span><span class="font-semibold">0.70 €</span></li>
+            </ul>
+          </div>
+          <div class="bg-white rounded-2xl p-5 border border-slate-200">
+            <h3 class="text-xl font-extrabold">Ëmbëlsira</h3>
+            <ul class="mt-3 space-y-2">
+              <li class="flex justify-between gap-4"><span>Tiramisu</span><span class="font-semibold">1.50 €</span></li>
+              <li class="flex justify-between gap-4"><span>Trileçe</span><span class="font-semibold">1.40 €</span></li>
+              <li class="flex justify-between gap-4"><span>Bakllava (2 copë)</span><span class="font-semibold">1.00 €</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shkarkim i menusë si PDF (link placeholder) -->
+      <div class="mt-6 text-sm text-slate-600">
+        Kërkon menynë si PDF? <a class="text-sky-600 font-semibold" href="#" onclick="alert('Vendos këtu linkun e PDF-së kur ta keni gati.')">Shkarko këtu</a>.
+      </div>
+    </div>
+  </section>
+
+  <!-- Orari -->
+  <section id="orari" class="py-14 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Orari i Punës</h2>
+      <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="bg-white rounded-2xl p-5 border border-slate-200">
+          <div class="font-bold">Pompë derivate</div>
+          <div class="text-slate-600">Hapur 24/7</div>
+        </div>
+        <div class="bg-white rounded-2xl p-5 border border-slate-200">
+          <div class="font-bold">Restaurant & Kafe</div>
+          <div class="text-slate-600">E hënë–E diel: 07:00–22:00</div>
+        </div>
+        <div class="bg-white rounded-2xl p-5 border border-slate-200">
+          <div class="font-bold">Kuzhina e mëngjesit</div>
+          <div class="text-slate-600">07:00–11:00</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lokacioni -->
+<!-- Update: Location section now reflects multiple branches -->
+<section id="lokacioni" class="py-14 bg-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Lokacionet</h2>
+    <p class="mt-2 text-slate-600">Spahia Petrol është pranë jush me disa pika shërbimi. Zgjidhni më të afërtën:</p>
+
+    <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- Pika 1 -->
+      <div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm">
+        <div class="font-bold">Pika Kryesore – Tranziti i Ri</div>
+        <div class="text-slate-600 text-sm">Prizren, rruga kryesore, afër rrethit të parë</div>
+        <div class="mt-3 rounded-xl overflow-hidden border border-slate-200">
+          <iframe title="Spahia Petrol Tranziti i Ri" src="https://www.google.com/maps?q=Tranziti+i+Ri+Prizren&output=embed" width="100%" height="180" loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <!-- Pika 2 -->
+      <div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm">
+        <div class="font-bold">Pika 2 – Shadërvan</div>
+        <div class="text-slate-600 text-sm">Qendra historike, afër Shadërvanit</div>
+        <div class="mt-3 rounded-xl overflow-hidden border border-slate-200">
+          <iframe title="Spahia Petrol Shadervan" src="https://www.google.com/maps?q=Shadervan+Prizren&output=embed" width="100%" height="180" loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <!-- Pika 3 -->
+      <div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm">
+        <div class="font-bold">Pika 3 – Autostrada</div>
+        <div class="text-slate-600 text-sm">Dalja Prizren–Vërmicë, ideal për udhëtarë</div>
+        <div class="mt-3 rounded-xl overflow-hidden border border-slate-200">
+          <iframe title="Spahia Petrol Autostrada" src="https://www.google.com/maps?q=Autostrada+Prizren&output=embed" width="100%" height="180" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
   </div>
+</section>
 
-  <!-- Navigimi -->
-<div class="nav-buttons">
-  <button onclick="showSection('kafe')">☕ Kafe</button>
-  <button onclick="showSection('pije')">🥤 Pije</button>
-  <button onclick="showSection('ushqime')">🍕 Ushqime</button>
-</div>
-
-<div class="whatsapp-order">
-  <a href="https://wa.me/38344929355" target="_blank" class="btn-order">
-    📲 Porosit Tani
-  </a>
-</div>
-
-
-  <!-- Seksioni i kafes -->
-  <div id="kafe" class="menu-section">
-    <h2>Kafe</h2>
-    <ul class="subitems">
-  <li><span>Expreso</span><span class="price">€0.80</span></li>
-  <li><span>Makiato e vogël</span><span class="price">€0.80</span></li>
-  <li><span>Makiato e madhe</span><span class="price">€1.00</span></li>
-  <li><span>Ness Cafe</span><span class="price">€1</span></li>
-  <li><span>Vanila Cafe</span><span class="price">€1</span></li>
-  <li><span>Qaj Rusi</span><span class="price">€0.70</span></li>
-  <li><span>Qaj Brusnica</span><span class="price">€0.70</span></li>
-  <li><span>Qaj Menta</span><span class="price">€0.70</span></li>
-  <li><span>Qaj Fruta Mali</span><span class="price">€0.70</span></li>
-  <li><span>Qaj Kamilica</span><span class="price">€0.70</span></li>
-  <li><span>Qaj Kamomil</span><span class="price">€0.70</span></li>
-    </ul>
-  </div>
-
-  <!-- Seksioni i pijeve -->
-  <div id="pije" class="menu-section hidden">
-    <h2>Pije</h2>
-    <ul class="subitems">
-  <li><span>Red Bull</span><span class="price">€2.00</span></li>
-  <li><span>Coca Cola</span><span class="price">€1.00</span></li>
-  <li><span>Coca Cola 0</span><span class="price">€1.00</span></li>
-  <li><span>Fanta Orange</span><span class="price">€1.00</span></li>
-  <li><span>Fanta Exotik</span><span class="price">€1.00</span></li>
-  <li><span>Shveps</span><span class="price">€1.00</span></li>
-  <li><span>Biter Limon</span><span class="price">€1.00</span></li>
-  <li><span>Sprite</span><span class="price">€1.00</span></li>
-  <li><span>Limon Soda</span><span class="price">€1.00</span></li>
-  <li><span>Sola Multivitamin</span><span class="price">€1.00</span></li>
-  <li><span>Sola Ice Tea</span><span class="price">€1.00</span></li>
-  <li><span>Laqin Limon</span><span class="price">€1.00</span></li>
-  <li><span>Laqin Mandarin</span><span class="price">€1.00</span></li>
-  <li><span>Laqin Tropikal</span><span class="price">€1.00</span></li>
-  <li><span>Laqin Dud</span><span class="price">€1.00</span></li>
-  <li><span>Gold Eagle</span><span class="price">€1.00</span></li>
-  <li><span>Ice Tea Natyral</span><span class="price">€1.00</span></li>
-  <li><span>Multivitamin</span><span class="price">€1.00</span></li>
-  <li><span>Borovnicë</span><span class="price">€1.00</span></li>
-  <li><span>Qershi</span><span class="price">€1.00</span></li>
-  <li><span>Mollë</span><span class="price">€1.00</span></li>
-  <li><span>Pjeshkë</span><span class="price">€1.00</span></li>
-  <li><span>Portokall</span><span class="price">€1.00</span></li>
-  <li><span>Dredhëz</span><span class="price">€1.00</span></li>
-  <li><span>Lang për Fëmijë</span><span class="price">€0.50</span></li>
-    </ul>
-  </div>
-
-  <!-- Seksioni i ushqimeve -->
-<!-- Ushqime (me dizajn të përmirësuar në card view) -->
-<div id="ushqime" class="menu-section hidden">
-  <h2>Ushqime</h2>
-  <div class="food-grid">
-    <!-- Grupi i Picave në një kartë të vetme -->
-    <div class="item">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Supreme_pizza.jpg" alt="Pizza" />
-      <div class="item-title">Pizza</div>
-      <ul class="subitems">
-        <li><span>Pizza e Vogël</span><span class="price">€3.00</span></li>
-        <li><span>Pizza Mesme</span><span class="price">€3.50</span></li>
-        <li><span>Pizza Margarita</span><span class="price">€2.50 - €3.00</span></li>
-        <li><span>Pizza Proshutë</span><span class="price">€3.00 - €3.50</span></li>
-        <li><span>Pizza Shtëpie</span><span class="price">€3.50 - €4.00</span></li>
-      </ul>
+  <!-- Rezervo & Kontakt -->
+  <section id="rezervo" class="py-14 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="grid lg:grid-cols-2 gap-8">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Rezervo tavolinë</h2>
+          <p class="mt-2 text-slate-600">Telefononi ose dërgoni mesazh në WhatsApp për rezervime, porosi për take-away apo pyetje.</p>
+          <div class="mt-6 grid sm:grid-cols-2 gap-4">
+            <a href="tel:+38344111222" class="flex items-center justify-center gap-2 px-5 py-4 rounded-2xl bg-sky-500 text-white font-semibold hover:bg-sky-600">📞 +383 44 111 222</a>
+            <a href="https://wa.me/38344111222" target="_blank" class="flex items-center justify-center gap-2 px-5 py-4 rounded-2xl border border-slate-300 font-semibold hover:border-sky-400">💬 WhatsApp</a>
+          </div>
+          <div class="mt-4 text-sm text-slate-600">Email: <a class="text-sky-600 font-semibold" href="mailto:info@spahiapetrol.com">info@spahiapetrol.com</a></div>
+        </div>
+        <div id="kontakti" class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+          <h3 class="text-xl font-extrabold">Na shkruani</h3>
+          <form class="mt-4 grid gap-3" onsubmit="event.preventDefault(); alert('Faleminderit! Mesazhi u regjistrua.');">
+            <input class="px-4 py-3 rounded-xl border border-slate-300 focus:outline-none" placeholder="Emri" required>
+            <input type="tel" class="px-4 py-3 rounded-xl border border-slate-300 focus:outline-none" placeholder="Numri i telefonit" required>
+            <textarea rows="4" class="px-4 py-3 rounded-xl border border-slate-300 focus:outline-none" placeholder="Mesazhi" required></textarea>
+            <button class="px-5 py-3 rounded-xl bg-sky-500 text-white font-semibold hover:bg-sky-600">Dërgo</button>
+          </form>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <!-- Grupi i Dynerëve -->
-    <div class="item">
-      <img src="doner.webp" alt="Dyner" />
-      <div class="item-title">Dyner</div>
-      <ul class="subitems">
-        <li><span>Dyner Pule Petë</span><span class="price">€2.00 / €3.50</span></li>
-        <li><span>Dyner Pule Pitak</span><span class="price">€2.00 / €3.50</span></li>
-        <li><span>Dyner Pule Pijatë</span><span class="price">€3.50</span></li>
-        <li><span>Dyner Viçi Petë</span><span class="price">€2.00 / €3.50</span></li>
-        <li><span>Dyner Viçi Pitak</span><span class="price">€2.00 / €3.50</span></li>
-        <li><span>Dyner Viçi Pijatë</span><span class="price">€3.50</span></li>
-      </ul>
+  <!-- Footer -->
+  <footer class="py-10 bg-white border-t border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="text-sm">© <span id="year"></span> Spahia Petrol. Të gjitha të drejtat e rezervuara.</div>
+      <div class="text-sm text-slate-500">Ndërtuar me ❤️ nga ekipi juaj.</div>
     </div>
-
-    
-
-    <!-- Grupi i Grillit -->
-    <div class="item">
-      <img src="pexels-snapwire-675951.jpg" alt="Grill" />
-      <div class="item-title">Grill</div>
-      <ul class="subitems">
-        <li><span>Pleskavic</span><span class="price">€3.00</span></li>
-        <li><span>Pleskavic Sharri</span><span class="price">€4.00</span></li>
-        <li><span>Qebapa Qofte 1/5</span><span class="price">€3.00</span></li>
-        <li><span>Qebapa Qofte 1/7</span><span class="price">€4.00</span></li>
-        <li><span>File Pule</span><span class="price">€3.00</span></li>
-        <li><span>File Dublin</span><span class="price">€3.00</span></li>
-        <li><span>Suxhuk Vrishlle 1/10</span><span class="price">€5.00</span></li>
-        <li><span>Kajma</span><span class="price">€3.00</span></li>
-      </ul>
-    </div>
-
-
-        <!-- Grupi i hamburgerit -->
-    <div class="item">
-      <img src="hamburger.webp" alt="Grill" />
-      <div class="item-title">Burger</div>
-      <ul class="subitems">
-        <li><span>Hamburger Classik</span><span class="price">€2.00</span></li>
-        <li><span>Chese bruger</span><span class="price">€2.00</span></li>
-        <li><span>Eagess burger</span><span class="price">€2.00</span></li>
-      </ul>
-    </div>
-
-            <!-- Grupi i Tostave -->
-    <div class="item">
-      <img src="tost.webp" alt="Grill" />
-      <div class="item-title">Tostave</div>
-      <ul class="subitems">
-        <li><span>Tost</span><span class="price">€1.20</span></li>
-        <li><span>Sandwich</span><span class="price">€1.20</span></li>
-      </ul>
-    </div>
-
-    <!-- Grupi i Tradicionalëve -->
-    <div class="item">
-      <img src="albanian-cuisine-more-than-640x427.webp" alt="Tradicionale" />
-      <div class="item-title">Ushqime Tradicionale</div>
-      <ul class="subitems">
-        <li><span>Paqë</span><span class="price">€2.00</span></li>
-        <li><span>Gullash</span><span class="price">€3.00</span></li>
-        <li><span>Pasul me Mish</span><span class="price">€3.00</span></li>
-        <li><span>Kofshë Pule</span><span class="price">€3.00</span></li>
-        <li><span>Gjuveq Pule</span><span class="price">€3.00</span></li>
-        <li><span>Dolma</span><span class="price">€3.00</span></li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<style>
-.food-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-}
-.subitems {
-  list-style-type: none;
-  padding-left: 0;
-  margin-top: 10px;
-}
-.subitems li {
-  display: flex;
-  justify-content: space-between;
-  padding: 6px 0;
-  border-bottom: 1px solid #eee;
-  font-size: 1rem;
-}
-</style>
-
-
-
-
-  <!-- QR Code për URL-në e faqes -->
- 
-
-<div class="footer">
-  <p>© 2025 – DUBLINI FOOD & MORE. Ju mirëpresim çdo ditë!</p>
-  <a href="https://wa.me/38344929355" target="_blank" class="btn-order">
-    📲 Porosit Tani në WhatsApp shtyp butonin
-  </a>
-</div>
-
+  </footer>
 
   <script>
-    function showSection(id) {
-      document.querySelectorAll('.menu-section').forEach(section => {
-        section.classList.add('hidden');
-        section.classList.remove('active');
-      });
-      const selected = document.getElementById(id);
-      if (selected) {
-        selected.classList.remove('hidden');
-        selected.classList.add('active');
-      }
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      showSection('kafe');
-      new QRCode(document.getElementById("qrcode"), {
-        text: window.location.href,
-        width: 180,
-        height: 180,
-      });
-    });
+    // Mobile nav toggle
+    const btn = document.getElementById('menuBtn');
+    const nav = document.getElementById('mobileNav');
+    btn?.addEventListener('click', ()=> nav.classList.toggle('hidden'));
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
-
 </body>
 </html>
+
+
+<!-- ==========================================================
+  Spahia Petrol — Printable QR Flyer (flyer.html)
+  Përdorim: Ruaje këtë pjesë si skedar më vete "flyer.html" dhe shtype A5 ose A6.
+  - Ndrysho URL-në poshtë (data-url) për QR.
+  - Mund të shtypet bardhë e zi. Ka kornizë, titull dhe udhëzim.
+  - Ka butonin "Shto në tryezë" vetëm si tekst; për print përdoret CSS @media print.
+========================================================== -->
+
+<!-- FILLON DOKUMENTI I DYTË (hap në skedar më vete si flyer.html) -->
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spahia Petrol — QR Menu Flyer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @page { size: A5; margin: 12mm; }
+    @media print { .noprint { display: none !important; } }
+    body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, 'Noto Sans'; }
+  </style>
+</head>
+<body class="bg-slate-100 min-h-screen grid place-items-center p-6">
+  <div class="bg-white max-w-md w-full border border-slate-200 rounded-3xl p-6 text-center shadow">
+    <div class="mx-auto h-12 w-12 rounded-2xl bg-sky-500 text-white grid place-items-center text-xl font-extrabold">S</div>
+    <h1 class="mt-3 text-2xl font-extrabold">Spahia Petrol</h1>
+    <p class="text-slate-600">Skanoni për menynë e plotë të ushqimit & pijeve</p>
+
+    <!-- QR Kod: përdor një shërbim publik. Ndrysho URL-në poshtë -->
+    <div class="mt-4 flex justify-center">
+      <img id="qr" class="h-48 w-48" alt="QR Menu" src="https://api.qrserver.com/v1/create-qr-code/?size=512x512&data=https%3A%2F%2Fspahiapetrol.com%2Fmenu" />
+    </div>
+
+    <div class="mt-4 text-sm text-slate-600">ose vizitoni: <span class="font-semibold">spahiapetrol.com/menu</span></div>
+
+    <div class="mt-6 grid grid-cols-2 gap-3 text-left text-sm">
+      <div>
+        <div class="font-semibold">Orari</div>
+        <div>Pompë: 24/7</div>
+        <div>Restorant: 07:00–22:00</div>
+      </div>
+      <div>
+        <div class="font-semibold">Kontakt</div>
+        <div>📞 +383 44 111 222</div>
+        <div>✉️ info@spahiapetrol.com</div>
+      </div>
+    </div>
+
+    <div class="mt-6 text-xs text-slate-500">Tranziti i Ri, Prizren • Instagram: @spahiapetrol</div>
+
+    <div class="noprint mt-6">
+      <button onclick="window.print()" class="px-5 py-3 rounded-xl bg-sky-500 text-white font-semibold hover:bg-sky-600">Printo</button>
+    </div>
+  </div>
+
+  <!-- Opsional: Auto‑ndrysho URL‑në e QR me query param 'url' (p.sh. flyer.html?url=https://example.com) -->
+  <script>
+    const u = new URLSearchParams(location.search).get('url');
+    if (u) {
+      const enc = encodeURIComponent(u);
+      document.getElementById('qr').src = `https://api.qrserver.com/v1/create-qr-code/?size=512x512&data=${enc}`;
+    }
+  </script>
+</body>
+</html>
+
